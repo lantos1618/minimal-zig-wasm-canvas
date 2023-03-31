@@ -20,8 +20,8 @@ export fn colorCheckerboard(
     light_value_green: u8,
     light_value_blue: u8,
 ) void {
-    for (checkerboard_buffer) |*row, y| {
-        for (row) |*square, x| {
+    for (checkerboard_buffer, 0..) |*row, y| {
+        for (row, 0..) |*square, x| {
             var is_dark_square = true;
 
             if ((y % 2) == 0) {

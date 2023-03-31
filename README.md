@@ -50,7 +50,7 @@ and maximum size to be 2 pages, where each page consists of 64kB. Use the `--ver
 Start up the server in this repository's directory:
 
 ```shell
-python3 -m http.server
+python3 -m http.server -d public
 ```
 
 Go to your favorite browser and type to the URL `localhost:8000`. You should see the checkboard changing colors.

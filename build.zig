@@ -10,14 +10,14 @@ pub fn build(b: *std.build.Builder) void {
     const mode = b.standardReleaseOptions();
 
     const checkerboard_step = b.step("checkerboard", "Compiles checkerboard.zig");
-    const checkerboard_lib = b.addSharedLibrary("checkerboard", "./checkerboard.zig", .unversioned);
+    const checkerboard_lib = b.addSharedLibrary("checkerboard", "./src/checkerboard.zig", .unversioned);
     checkerboard_lib.setBuildMode(mode);
     checkerboard_lib.setTarget(.{
         .cpu_arch = .wasm32,
         .os_tag = .freestanding,
         .abi = .musl,
     });
-    checkerboard_lib.setOutputDir(".");
+    checkerboard_lib.setOutputDir("./public");
 
     // https://github.com/ziglang/zig/issues/8633
     checkerboard_lib.import_memory = true; // import linear memory from the environment

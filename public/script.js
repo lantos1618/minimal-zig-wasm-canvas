@@ -10,7 +10,7 @@ var importObject = {
     },
 };
 
-WebAssembly.instantiateStreaming(fetch("checkerboard.wasm"), importObject).then((result) => {
+WebAssembly.instantiateStreaming(fetch("/checkerboard.wasm"), importObject).then((result) => {
     const wasmMemoryArray = new Uint8Array(memory.buffer);
 
     const canvas = document.getElementById("checkerboard");
